@@ -15,7 +15,6 @@ public class Calculator {
         System.out.println("A második? ");
         int second = scanner.nextInt();
         System.out.println();
-
         System.out.println(first+ " + " + second + " = " + (first + second));
     }
 }
