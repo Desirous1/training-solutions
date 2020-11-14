@@ -33,13 +33,21 @@ public class Product {
 
         Scanner scanner = new Scanner(System.in);
 
-        Product product = new Product("",0);
-
         System.out.println("Kérek egy terméket: ");
-        product.name = scanner.nextLine();
+        String name = scanner.nextLine();
+
         System.out.println("Kérem az árát: ");
-        product.price = scanner.nextInt();
+        int price = scanner.nextInt();
+
         scanner.nextLine();
+        Product product = new Product(name, price);
+
+        System.out.println(product.getName() + " " + product.getPrice() + " Ft");
+
+        product.increasePrice(20);
+        System.out.println(product.getName() + " " + product.getPrice() + " Ft");
+
+        product.decreasePrice(30);
         System.out.println(product.getName() + " " + product.getPrice() + " Ft");
     }
 }
