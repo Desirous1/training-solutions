@@ -15,8 +15,8 @@ public class statementMain {
         boolean b = x > y ;
         System.out.println("b értéke: " + b);
 
-        boolean c = "true".equals(b) || z > 5;
-        // szerintem nem jó megoldás   boolean c = b || (z > 5);
+        //boolean c = "true".equals(b) || z > 5;
+        boolean c = b || (z > 5);
 
         System.out.println("c értéke: " + c);
 
