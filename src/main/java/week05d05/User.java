@@ -21,6 +21,12 @@ public class User {
             System.out.println("Hiba: nincs et karakter, de dot van");
             return;
         }
+
+        if ( email.indexOf(et) > email.indexOf(dot)) {
+            System.out.println("Hibás mail cím. ELőbb van a dot, mint az et");
+        }
+
+
         System.out.println("Minden rendben");
 
     }
