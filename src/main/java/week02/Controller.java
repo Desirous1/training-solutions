@@ -35,43 +35,47 @@ public class Controller {
             }
         }
 
-        public void runMenu() {
+        public int runMenu() {
 
             System.out.println("Please chose number of menu item!");
             Scanner scanner = new Scanner(System.in);
-            int choose = scanner.nextInt();
+            int choos = scanner.nextInt();
             scanner.nextLine();
-            switch (choose) {
+            switch (choos) {
                 case 1:
                     office.printName();
-                    return ;
+                    break;
                 case 2:
                     office.printNameReverse();
-                    return ;
+                    break;
                 case 3:
                     office.printEventNames();
-                    return ;
+                    break;
                 case 4:
                     office.printAreas();
-                    return ;
+                    break;
                 case 5:
                     office.printMeetingRoomsWithName();
-                    return ;
+                    break;
                 case 6:
                     office.printMeetingRoomsContains();
-                    return ;
+                    break;
                 case 7:
                     office.printAreasLargerThan();
-                    return ;
-                case 8:
+                    break;
+                default:
                     break;
             }
+            return choos;
         }
 
     public static void main(String[] args) {
         Controller controller = new Controller();
         controller.readOffice();
-             controller.printMenu();
-             controller.runMenu();
+        int choos = 0;
+        do {
+            controller.printMenu();
+            choos = controller.runMenu();
+        } while ( choos < 8 );
     }
 }

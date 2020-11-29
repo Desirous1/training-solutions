@@ -7,15 +7,16 @@ public class Office {
 
     private List<MeetingRoom> meetingRooms = new ArrayList<>();
 
-
-        public void addMeetingRoom(MeetingRoom paraText) {
-            meetingRooms.add(paraText);
-            return;
+        public void addMeetingRoom(MeetingRoom paraMeetingRoom) {
+            meetingRooms.add(paraMeetingRoom);
         }
 
         // 1.
         public void printName(){
-
+            for (MeetingRoom oi: meetingRooms  ) {
+                System.out.println(oi.getName());
+            }
+            System.out.println();
         }
         // 2.
         public void printNameReverse(){
@@ -31,7 +32,7 @@ public class Office {
         public void printAreas() {
             for (MeetingRoom oi: meetingRooms  ) {
                 System.out.println(oi.getName() + " room, lenght: " + oi.getLength() + ", width: " + oi.getWidth() +
-                        ", area: " + oi.getArea(oi.getLength(), oi.getWidth()));
+                        ", area: " + oi.getArea());
             }
             System.out.println();
         }

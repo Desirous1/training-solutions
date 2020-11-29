@@ -11,8 +11,8 @@ public class MeetingRoom {
         this.length = length;
         this.width = width;
     }
-    public int getArea(int parLenght, int parwidth) {
-        return parLenght * parwidth;
+    public int getArea() {
+        return length * width;
     }
 
     public String getName() {
