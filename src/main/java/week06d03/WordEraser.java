@@ -1,7 +1,5 @@
 package week06d03;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class WordEraser {
@@ -9,33 +7,23 @@ public class WordEraser {
     public String eraseWord(String words, String word) {
 
         Scanner firstW = new Scanner(words);
-        Scanner secondW = new Scanner(word);
+        StringBuilder ret = new StringBuilder();
 
-        List<String> listW = new ArrayList<>();
-
-        StringBuilder ret = new StringBuilder("");
-
-        // outer kellene, de nem tartok ott
         while (firstW.hasNext()) {
-            //listW.add(firstW.next());
-            while (secondW.hasNext()) {
-                if (!firstW.next().equals(secondW.next())) {
-                    ret.append(firstW.next());
-                }
+            String a = firstW.next();
+                if (!word.equals(a)) {                           //firstW.next().equals(word)) {
+                    ret.append(a + " ");
             }
         }
-        return ret.toString();
+        return ret.toString().trim();
     }
 
     public static void main(String[] args) {
         WordEraser wordEraser = new WordEraser();
-
-        //wordEraser.eraseWord("Körte Alma Meggy", "Alma Meggy");
-        System.out.println(wordEraser.eraseWord("Körte Alma Meggy", "Alma Meggy"));
-
+        // String tr = wordEraser.eraseWord("Alma Körte Meggy Cseresznye", "Meggy");
+        System.out.println(wordEraser.eraseWord("Alma Körte Meggy Cseresznye", "Meggy"));
+        // System.out.println(tr);
     }
-
-
 }
 
 
