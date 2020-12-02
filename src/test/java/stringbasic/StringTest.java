@@ -15,7 +15,13 @@ public class StringTest {
     @Test
     public void testEquals2(){
         assertEquals("Value12", "Value"+ 1 +2);
+        System.out.print("    Hexo   World    ".trim().replace("x", "ll").substring(2, 10));
+        System.out.println();
 
+        String[] a1 = "Első,Második,Harmadik".split(",");
+        for (String qq: a1 ) {
+            System.out.println(qq);
+        }
     }
 
 
