@@ -17,12 +17,12 @@ public class Budget {
 
         Scanner scanner = new Scanner(System.in);
         for (int i=0; i<3; i++   ) {
-            System.out.println("Kérem a nevét: ");
+            System.out.println("Kérem a termék nevét: ");
             String nev = scanner.nextLine();
             System.out.println("Kérem a hónap számát 1-12: ");
             int honap = scanner.nextInt();
             scanner.nextLine();
-            System.out.println("Kérek egy összeget: ");
+            System.out.println("Kérem a termék árát: ");
             int ar = scanner.nextInt();
             scanner.nextLine();
             budget.Budget(new Item(ar, honap, nev));
