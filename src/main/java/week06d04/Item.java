@@ -6,34 +6,37 @@ public class Item {
     private int month;
     private String name;
 
-    public Item(int price, int month, String name) {
+    public Item(String name, int price, int month) {
+        if(name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name can't be balnk");
+        }
+        if(price <= 0  ) {
+            throw new IllegalArgumentException("Price must be greater than 0");
+        }
+        if(month < 1 || month > 12  ) {
+            throw new IllegalArgumentException("Invalid month supplied");
+        }
         this.price = price;
         this.month = month;
         this.name = name;
     }
-
 
     public int getPrice() {
         return price;
     }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public int getMonth() {
         return month;
     }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "Item{" +
+                "price=" + price +
+                ", month=" + month +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

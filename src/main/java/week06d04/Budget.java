@@ -2,13 +2,31 @@ package week06d04;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Budget {
 
-    List<Item> items = new ArrayList<>();
+    public final List<Item> items;
 
-    public void Budget(Item itemList) {
+    public Budget(List<Item> items) {
+        this.items = new ArrayList<>(items);
+
+    }
+
+    public List<Item> getItemsByMonth(int mounth) {
+        if(mounth < 1 || mounth > 12) {
+            throw new IllegalArgumentException("Invalid month supplied.");
+        }
+        List<Item> result = new ArrayList<>();
+        for (Item item : items) {
+            if ( item.getMonth() == mounth ) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+}
+
+   /* public void Budget(Item itemList) {
         items.add(itemList);
     }
 
@@ -33,12 +51,4 @@ public class Budget {
         for (Item oi: budget.items  ) {
             System.out.println(oi.getName() + "\n" + oi.getMonth() + "\n" + oi.getPrice());
         }
-    }
-
-
-
-
-
-
-
-}
+    } */
