@@ -20,7 +20,10 @@ public class Office {
         }
         // 2.
         public void printNameReverse(){
-
+            for (int i=meetingRooms.size()-1; i >= 0; i--) {
+                System.out.println(meetingRooms.get(i).getName() + " , " + meetingRooms.get(i).getLength() + " , " +
+                        meetingRooms.get(i).getWidth() + " , " + meetingRooms.get(i).getArea());
+            }
         }
 
         // 3.
