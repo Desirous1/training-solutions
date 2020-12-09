@@ -1,12 +1,13 @@
 package week02;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Controller {
 
         String[] menuItems = {"1. Tárgyalók sorrendben.", "2. Tárgyalók visszafele sorrendben.",
                               "3. Minden második tárgyaló.", "4. Területek.", "5. Keresés pontos név alapján.",
-                              "6. Keresés", "7. Keresés terület alapján", "8. Kilépés"};
+                              "6. Keresés névtöredék alapján", "7. Keresés terület alapján", "8. Kilépés"};
 
         Office office = new Office();
 
@@ -41,6 +42,7 @@ public class Controller {
             Scanner scanner = new Scanner(System.in);
             int choos = scanner.nextInt();
             scanner.nextLine();
+            System.out.println("Választott menü: " + menuItems[choos-1]);
             switch (choos) {
                 case 1:
                     office.printName();
@@ -76,6 +78,7 @@ public class Controller {
         do {
             controller.printMenu();
             choos = controller.runMenu();
+            if (choos >=8) System.out.println("Viszlát");
         } while ( choos < 8 );
     }
 }
