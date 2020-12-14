@@ -27,15 +27,15 @@ public class Biscuit {
     }
 
 
-        public static void main(String[] args) {
-            BiscuitType type = BiscuitType.PILOTA;
+    public static void main(String[] args) {
+        BiscuitType type = BiscuitType.PILOTA;
 
-            //type.setGramAmount(12);
+        //type.setGramAmount(12);
 
-            System.out.println("Objektum címe:");
-            System.out.println(of(BiscuitType.PILOTA, 33));
-            System.out.println("Objektum állapota, változók értéke:");
-            System.out.println(type.toString() + " " + type.getGramAmount());
-        }
+        System.out.println("Objektum címe:");
+        System.out.println(of(BiscuitType.PILOTA, 33));
+        System.out.println("Objektum állapota, változók értéke:");
+        System.out.println(type.toString() + " " + type.getGramAmount());
+    }
 
 }
