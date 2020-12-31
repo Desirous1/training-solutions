@@ -22,4 +22,9 @@ public enum MarkType {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString() {
+        return description + "(" + value + ")";
+    }
 }

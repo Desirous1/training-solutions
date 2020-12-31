@@ -10,4 +10,9 @@ public class Subject {
     public String getSubjectName() {
         return subjectName;
     }
+
+    @Override
+    public String toString() {
+        return subjectName;
+    }
 }

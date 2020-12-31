@@ -18,12 +18,16 @@ public class Tutor {
     }
 
     public boolean tutorTeachingSubject(Subject paraSubject) {
-         // return taughtSubjects.contains(paraSubject);
-        for (Subject oi: taughtSubjects ) {
-            if ( oi.equals(paraSubject) ) {
+        //return taughtSubjects.contains(paraSubject);
+        if (paraSubject == null) {
+            return false;
+        }
+        for (Subject oi : taughtSubjects) {
+            if (oi.getSubjectName().equals(paraSubject.getSubjectName())) {
                 return true;
             }
         }
         return false;
     }
+
 }
