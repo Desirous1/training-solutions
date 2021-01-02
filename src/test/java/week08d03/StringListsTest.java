@@ -13,8 +13,8 @@ class StringListsTest {
         System.out.println(unio.stringListsUnion(Arrays.asList("abc"), Arrays.asList("abc") ));
         assertEquals(Arrays.asList("abc"), unio.stringListsUnion(Arrays.asList("abc"), Arrays.asList("abc") ));
 
-        System.out.println(unio.stringListsUnion(Arrays.asList("a","b","c"), Arrays.asList("a","f","b","g","c") ));
-
+        System.out.println(unio.stringListsUnion(Arrays.asList("b","c"), Arrays.asList("c","a","f","b","g","c") ));
+        //assertEquals(Arrays.asList("b, c, a, f, g"),unio.stringListsUnion(Arrays.asList("b","c"), Arrays.asList("c","a","f","b","g","c") ) );
     }
 
 }
