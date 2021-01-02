@@ -4,18 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class MarkTest {
+
+public class MarkTest {
+
     public static final Subject SUBJECT = new Subject("matematika");
     public static final Tutor TUTOR = new Tutor("Nagy Lilla", Arrays.asList(SUBJECT));
 
 
-//    @Test
-//    public void nullParameterShouldThrowException() throws NullPointerException {
-//        Exception ex = assertThrows(NullPointerException.class, () -> new Mark(MarkType.A, null, TUTOR));
-//        assertEquals("Both subject and tutor must be provided!", ex.getMessage());
-//    }
+    @Test
+    public void nullParameterShouldThrowException() throws NullPointerException {
+        Exception ex = assertThrows(NullPointerException.class, () -> new Mark(MarkType.A, null, TUTOR));
+        assertEquals("Both subject and tutor must be provided!", ex.getMessage());
+    }
 
     @Test
     public void testCreate() {
@@ -23,7 +26,6 @@ class MarkTest {
         assertEquals(MarkType.A, mark.getMarkType());
         assertEquals(SUBJECT, mark.getSubject());
         assertEquals(TUTOR, mark.getTutor());
-        //assertEquals("excellent", mark.toString()); EREDETILEG EZT kaptam, ez nem működött
-        assertEquals("excellent", mark.getMarkType().getDescription());
+        assertEquals("excellent(5)", mark.toString());
     }
 }

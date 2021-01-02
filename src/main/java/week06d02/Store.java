@@ -12,19 +12,16 @@ public class Store {
     }
 
 
-    public int getProductByCategoryName(String paraCategory){
+    public int getProductByCategoryName(Category paraCategory){
         int counter = 0;
         for (Product db:  products  ) {
-            if( db.getCategory().equals(db) ){
+            //if( db.getCategory().equals(paraCategory) ){
+
                 counter++;
             }
             // nem tudom kell e ?   continue;
-        }
         return counter;
+        }
+
     }
 
-
-
-
-
-}

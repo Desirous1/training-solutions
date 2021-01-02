@@ -2,7 +2,7 @@ package week05d05;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
 
@@ -11,10 +11,7 @@ public class UserTest {
         User user = new User("zsoltdoczigmail.c@om");
         String name = user.fullName("Zsolt", "Dóczi");
 
-        assertEquals(name, "ZsoltDóczi"); // csak azért írtam egybe, hogy hibás legyen a teszt
-
-
-
+        assertEquals(name,"Zsolt Dóczi");
     }
 
 }

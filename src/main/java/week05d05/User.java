@@ -2,8 +2,8 @@ package week05d05;
 
 
 public class User {
-    private String FirstName;
-    private String lasName;
+    private String firstName;
+    private String lastName;
     private String email;
     public String et = "@";
     public String dot = ".";
@@ -26,10 +26,10 @@ public class User {
             System.out.println("Hibás mail cím. ELőbb van a dot, mint az et");
         }
 
+       //String conkat = fullName(firstName, lastName) {
+            System.out.println("Minden rendben");
+        }
 
-        System.out.println("Minden rendben");
-
-    }
 
     public String fullName(String paraFirst, String paraLast) {
         String fullName = paraFirst + " " + paraLast;

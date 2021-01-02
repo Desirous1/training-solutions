@@ -36,6 +36,7 @@ public class Biscuit {
         System.out.println(of(BiscuitType.PILOTA, 33));
         System.out.println("Objektum állapota, változók értéke:");
         System.out.println(type.toString() + " " + type.getGramAmount());
+
     }
 
 }

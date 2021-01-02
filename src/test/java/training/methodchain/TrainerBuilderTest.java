@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TrainerBuilderTest {
     @Test
 
-    public  void   build() {
+    public  void build() {
         //TrainerBuilder trainerBuilder = new TrainerBuilder().withName("John Doe").withAge(30);
         Trainer trainer = new TrainerBuilder()
                 .withName("John Doe")
@@ -18,8 +18,4 @@ class TrainerBuilderTest {
 
         assertEquals(trainer.getName(), "John Doe");
     }
-
-
-
-
 }

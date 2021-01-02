@@ -1,6 +1,6 @@
 package arrayofarrays;
 
-import array.ArrayHandler;
+//import array.ArrayHandler;
 
 public class ArrayOfArraysMain {
 
