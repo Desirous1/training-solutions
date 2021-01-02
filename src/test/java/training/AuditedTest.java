@@ -17,7 +17,7 @@ class AuditedTest {
         values.add(new Employee2("Jane Doe", LocalDateTime.of(2019,2,1,10,0)));
 
         Audited audited = Audited.findLastCreated(values);
-        assertEquals("Jane Doe", ((Employee2)audited).getName());
+        assertEquals("Jane Doe", ( (Employee2) audited).getName());
     }
 
 }
