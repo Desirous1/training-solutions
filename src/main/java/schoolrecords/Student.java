@@ -22,7 +22,7 @@ public class Student {
 
     public double calculateAverage() {
         if (marks.isEmpty()) {
-            return 0;
+            return 0.0;
         }
         double sum = 0;
         for (Mark oi : marks) {
@@ -34,9 +34,9 @@ public class Student {
 
     public double calculateSubjectAverage(Subject paraSubject) {
         if (marks.isEmpty() || paraSubject == null) {
-            return 0;
+            return 0.0;
         }
-        double sum = 0;
+        double sum = 0.0;
         int count = 0;
         for (Mark oi : marks) {
             if (oi.getSubject().getSubjectName().equals(paraSubject.getSubjectName())) {
