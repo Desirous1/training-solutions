@@ -36,18 +36,12 @@ public class ClassRecords {
 
     // szerintem nem jó
     public double calculateClassAverage() {
-        //if (getClassName().length() != 0) {
         if (students.size() == 0) {
             throw new ArithmeticException("No student in the class, average calculation aborted!");
         }
-        //int studentNumber = 0;
-
         double classAverage = 0.0;
-        for (int i = 0; i < students.size(); i++) {
-            // if ( students.get(i).equals(getClassName()) ) {
-            // classAverage = classAverage + students.get(i).calculateAverage();
-            classAverage = classAverage + students.get(i).calculateAverage();
-            //}
+        for (Student oi : students) {
+            classAverage = classAverage + oi.calculateAverage();
         }
         if (classAverage == 0) {
             throw new ArithmeticException("No marks present, average calculation aborted!");
@@ -61,23 +55,26 @@ public class ClassRecords {
         for (Student oi : students) {
 //            System.out.println(oi.calculateSubjectAverage(paraSubject));
             resultAverage = resultAverage + oi.calculateSubjectAverage(paraSubject);
-            if ( oi.calculateSubjectAverage(paraSubject)!=0){
+            if (oi.calculateSubjectAverage(paraSubject) != 0) {
                 counter++;
             }
         }
-        if (students.size()==0) {
+        if (students.size() == 0) {
             return 0.0;
         }
         return resultAverage / counter;
     }
 
     public Student findStudentByName(String paraStudentName) {
+        if ( paraStudentName.equals("") ) {
+            throw new IllegalArgumentException("Student name must not be empty!");
+        }
         for (Student oi : students) {
-            if (paraStudentName.equals(oi)) {
+            if (oi.getClass().getName().equals(paraStudentName)) {
                 return oi;
             }
         }
-        return students.get(0);
+        throw new IllegalStateException("No students to search!");
     }
 
     public String getClassName() {
@@ -99,8 +96,8 @@ public class ClassRecords {
 
 
     public Student repetition() {
-     return students.get(rnd.nextInt(5));
-  }
+        return students.get(rnd.nextInt(5));
+    }
 
     public List<Student> getStudents() {
         return students;

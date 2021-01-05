@@ -104,18 +104,18 @@ public class ClassRecordsTest {
         assertEquals(2.75, classRecords.calculateClassAverageBySubject(geography));
     }
 
-//    @Test
-//    public void emptyStudentNameShouldThrowException() throws IllegalArgumentException {
-//        Exception ex = assertThrows(IllegalArgumentException.class, () -> classRecords.findStudentByName(""));
-//        assertEquals("Student name must not be empty!", ex.getMessage());
-//    }
-//
-//    @Test
-//    public void emptyListShouldThrowException() throws IllegalStateException {
-//        Exception ex = assertThrows(IllegalStateException.class, () -> new ClassRecords("First Grade", new Random()).findStudentByName("Kovács Rita"));
-//        assertEquals("No students to search!", ex.getMessage());
-//    }
-//
+    @Test
+    public void emptyStudentNameShouldThrowException() throws IllegalArgumentException {
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> classRecords.findStudentByName(""));
+        assertEquals("Student name must not be empty!", ex.getMessage());
+    }
+
+    @Test
+    public void emptyListShouldThrowException() throws IllegalStateException {
+        Exception ex = assertThrows(IllegalStateException.class, () -> new ClassRecords("First Grade", new Random()).findStudentByName("Kovács Rita"));
+        assertEquals("No students to search!", ex.getMessage());
+    }
+
 //    @Test
 //    public void nonExistingStudentShouldThrowException() throws IllegalArgumentException {
 //        Exception ex = assertThrows(IllegalArgumentException.class, () -> classRecords.findStudentByName("Kiss Rita"));
