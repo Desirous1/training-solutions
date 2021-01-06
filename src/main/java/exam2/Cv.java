@@ -14,6 +14,7 @@ A findSkillLevelByName() a skill neve alapján visszaadja annak szintjét.
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Cv {
 
@@ -44,8 +45,17 @@ public class Cv {
     }
 
     public void addSkills(String... paraString) {
-               // skills.add(paraString);
 
+              for (int i=0; i < paraString.length; i++) {
+                  String result = paraString[i];
+                  int lastSpace =  result.lastIndexOf(" ");
+                  String name = result.substring(0,lastSpace);
+                  int level = Integer.parseInt(result.substring(lastSpace+2,result.length()-1));
+                  //Skill complett = new Skill(name,level);    // 1
+                  //skills.add(complett);                      // 1
+                  skills.add(new Skill(name,level));
+              }
+               // skills.add(paraString);
     }
 
 
