@@ -11,6 +11,7 @@ public class ClassRecords {
     private List<Student> students = new ArrayList<>();
 
     public ClassRecords(String name, Random rnd) {
+
         this.className = name;
         this.rnd = rnd;
     }
@@ -66,36 +67,52 @@ public class ClassRecords {
     }
 
     public Student findStudentByName(String paraStudentName) {
-        if ( paraStudentName.equals("") ) {
+        if (paraStudentName.equals("")) {
             throw new IllegalArgumentException("Student name must not be empty!");
         }
+        if (students.isEmpty()) {
+            throw new IllegalStateException("No students to search!");
+        }
         for (Student oi : students) {
-            if (oi.getClass().getName().equals(paraStudentName)) {
+            if (oi.getName().equals(paraStudentName)) {
                 return oi;
             }
         }
-        throw new IllegalStateException("No students to search!");
+        throw new IllegalArgumentException("Student by this name cannot be found! " + paraStudentName);
     }
 
     public String getClassName() {
         return className;
     }
 
-//    private boolean isEmpty(String paraString) {
-//
-//        return true;
-//    }
+    private boolean isEmpty(String paraString) {
+        return paraString == null || "".equals(paraString.trim());
+    }
 
-//    public String listStudentNames() {
-//
-//        return "";
-//    }
-//    public List<StudyResultByName> listStudyResult() {
-//        return ;
-//    }
+    public String listStudentNames() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < students.size(); i++) {
+            result.append(students.get(i).getName());
+            if (students.size() > i + 1) {
+                result.append(", ");
+            }
+        }
+        return result.toString();
+    }
+
+    public List<StudyResultByName> listStudyResults() {
+        List<StudyResultByName> result = new ArrayList<>();
+        for (Student oi : students) {
+            result.add(new StudyResultByName(oi.calculateAverage(), oi.getName()));
+        }
+        return result;
+    }
 
 
     public Student repetition() {
+        if ( students.isEmpty()) {
+            throw new IllegalStateException("No students to select for repetition!");
+        }
         return students.get(rnd.nextInt(5));
     }
 
