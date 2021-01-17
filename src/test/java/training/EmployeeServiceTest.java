@@ -13,7 +13,7 @@ class EmployeeServiceTest {
         int originalYearOfBirth = 1980;
         String originalName = "Jack";
         List<String> originalCourses = new ArrayList<>();
-        new EmployeeService().tryChangeValues(originalYearOfBirth, originalName, originalCourses);
+     //   new EmployeeService().tryChangeValues(originalYearOfBirth, originalName, originalCourses);
 
         assertEquals(1980, originalYearOfBirth);
     }
