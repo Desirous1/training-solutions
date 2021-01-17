@@ -37,7 +37,7 @@ public class EmployeeService {
         }
         System.out.println(Files.readAllLines(file, Charset.forName("iso-8859-2")));
 
-        //Bináris fájl olvasás írás
+        //Bájtos fájl olvasás írás
         Path file2 = Path.of("data.dat");
         try {
             Files.write(file2, new byte[]{97, 98, 99});
@@ -53,7 +53,7 @@ public class EmployeeService {
             throw new IllegalStateException("Can not read file", ee);
         }
 
-        //Fájl olvasása bufferrel
+        //Fájl olvasása Readerrel bufferrel
         Path file3 = Path.of("employees.txt");
         try (BufferedReader reader = Files.newBufferedReader(file3)) {
             String line;
@@ -65,6 +65,7 @@ public class EmployeeService {
             throw new IllegalStateException("Can not read file", ioe);
         }
 
+        //String írása Writerrel
 
     }
 }
