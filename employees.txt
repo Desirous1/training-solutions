@@ -1,4 +1,2 @@
-John Doe,200000
-Jane Doe,200000
-Jack Doe,200000
-Árvíztûrõ Tükörfúrógép,200000
+John Doe
+Jane Doe
