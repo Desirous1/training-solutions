@@ -1,28 +1,42 @@
 package week11d04;
 
-import java.io.InputStream;
+import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.file.Path;
 
 public class FilesSum {
 
-    private String prefixName = "number";
-    private List<String> fileNameList = new ArrayList<>();
+    public int readFile(String name) {
 
+        //Path path = Path.of(name);
+        try {
+            String fileContent = Files.readString(Path.of(name));
+            //int number = Integer.parseInt(fileContent);
+            return Integer.parseInt(fileContent);    //number;
+        } catch (IOException e) {
+            throw new IllegalStateException("Can not read file", e);
+        }
+    }
 
-    public void fileListGenerate() {
-
+    public int sumNumbers() {
+        int sum = 0;
+        for (int i = 0; i < 100; i++) {
+            //String fileName = "number" + (i < 10 ? "0" + i : i) + ".txt";
+            String fileName = String.format("number%02d.txt", i);
+            if (Files.isRegularFile((Path.of(fileName)))) {
+                int number = readFile(fileName);
+                System.out.println(fileName + (number > 99 ? " " : "  ") + number);
+                sum += number;
+            }
+        }
+        System.out.println("----------------");
+        return sum;
     }
 
 
-
-
-    public int sumNumbers(InputStream paraName) {
-     //   int summaValue = Integer.parseInt(Files.readString("number00.txt"));
-return 0;
+    public static void main(String[] args) {
+        //System.out.println(new FilesSum().readFile("number20.txt"));
+        System.out.println("Az összeg:   " + new FilesSum().sumNumbers());
     }
-
-
 
 }
