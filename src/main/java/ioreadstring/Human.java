@@ -17,11 +17,11 @@ public class Human {
         return familyName;
     }
 
-    @Override
-    public String toString() {
-        return "Human{" +
-                "secondName='" + secondName + '\'' +
-                ", familyName='" + familyName + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Human{" +
+//                "secondName='" + secondName + '\'' +
+//                ", familyName='" + familyName + '\'' +
+//                '}';
+//    }
 }

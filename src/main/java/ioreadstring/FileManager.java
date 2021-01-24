@@ -22,10 +22,11 @@ public class FileManager {
             List<String> fileInString = Files.readAllLines(myFile);
             for (String oi : fileInString) {
                 String firstAndLast[] = oi.split(" ");
+                //System.out.println(firstAndLast[0]);
                 Human h = new Human(firstAndLast[0], firstAndLast[1]);
                 humans.add(h);
             }
-            System.out.println(humans.toString());
+            //System.out.println(humans.toString());
 
         } catch (IOException ioe) {
             throw new IllegalStateException("Can not read file!", ioe);
