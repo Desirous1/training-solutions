@@ -6,15 +6,13 @@ public class LetterFinder {
 
     public int letterCounter(String word) {
 
-        Set<Character> numberOfCharacter = new HashSet<>();
-        String worldLowerCase = word.toLowerCase();
-        for (int i = 0; i < worldLowerCase.length(); i++) {
-            int number = worldLowerCase.charAt(i);
-            if (number >= 'a' && number <= 'z') {
-                    numberOfCharacter.add(worldLowerCase.charAt(i));
-             }
+        Set<Character> characterFromWord = new HashSet<>();
+        for (Character aChar : word.toLowerCase().toCharArray()) {
+            if (aChar >= 'a' && aChar <= 'z') {
+                characterFromWord.add(aChar);
+            }
         }
-        return numberOfCharacter.size();
+        return characterFromWord.size();
     }
 
     public static void main(String[] args) {
