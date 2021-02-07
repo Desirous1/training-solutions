@@ -2,8 +2,10 @@ package trainer;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 import java.util.Queue;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -56,6 +58,9 @@ public class QueueTest {
         System.out.println(dq);
 
         assertEquals(true, dq.isEmpty());
+
+
+        assertEquals(null,dq.peek()); // speciálís visszatérési értéket ad ha nem sikerül
     }
 }
 
