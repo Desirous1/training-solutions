@@ -1,8 +1,6 @@
 package properties;
 
 import java.io.*;
-import java.nio.file.FileSystem;
-import java.nio.file.Path;
 import java.util.Properties;
 
 public class DatabaseConfiguration {
