@@ -44,6 +44,18 @@ public class DatabaseConfiguration {
         }
     }
 
+    public String getHost() {
+        return config.getProperty("db.host");
+    }
+
+    public int getPort() {
+        return Integer.parseInt(config.getProperty("db.port"));
+    }
+
+    public String getSchema() {
+        return config.getProperty("db.schema");
+    }
+
 
     public static void main(String[] args) {
         DatabaseConfiguration db = new DatabaseConfiguration();
@@ -52,8 +64,9 @@ public class DatabaseConfiguration {
 
         //nem tudom meghívni a File típusú file attribútumot váró konstruktort.
 
+        System.out.println(db.getHost());
+        System.out.println(db.getPort());
+        System.out.println(db.getSchema());
 
     }
-
-
 }
