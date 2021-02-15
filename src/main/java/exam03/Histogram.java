@@ -2,7 +2,6 @@ package exam03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -12,7 +11,6 @@ public class Histogram {
         Path file = Path.of("resources/Histogram.txt");
         try (BufferedReader readFile = Files.newBufferedReader(file)) {
             createHistogram(readFile);
-            //System.out.println();
         } catch (IOException ioe) {
             throw new IllegalStateException("can not read file", ioe);
         }
@@ -28,7 +26,6 @@ public class Histogram {
             }
             sb.append("\n");
         }
-
     return sb.toString();
     }
 }
