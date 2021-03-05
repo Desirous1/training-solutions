@@ -1,4 +1,4 @@
-package generatedid;
+package jdbc.architecture;
 
 import org.mariadb.jdbc.MariaDbDataSource;
 

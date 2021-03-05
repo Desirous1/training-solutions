@@ -1,10 +1,9 @@
-package generatedid;
+package jdbc.architecture;
 
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mariadb.jdbc.MariaDbDataSource;
-
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -38,16 +37,4 @@ public class EmployeesDaoTest {
         employeesDao.createEmployee("John Doe");
         assertEquals(Arrays.asList("John Doe"), employeesDao.listEmployeeNames());
     }
-
-    @Test
-    public void testById() {
-        long id = employeesDao.createEmployee("Jack Doe");
-        System.out.println(id);
-        id = employeesDao.createEmployee("Jane Doe");
-        System.out.println(id);
-        String name = employeesDao.findEmployeeNameById(id);
-        assertEquals("Jane Doe", name);
-    }
-
-
 }

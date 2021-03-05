@@ -1,4 +1,4 @@
-package architecture;
+package jdbc.generatedid;
 
 import org.mariadb.jdbc.MariaDbDataSource;
 

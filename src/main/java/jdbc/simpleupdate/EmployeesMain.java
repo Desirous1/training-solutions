@@ -1,4 +1,4 @@
-package simpleupdate;
+package jdbc.simpleupdate;
 
 import org.mariadb.jdbc.MariaDbDataSource;
 
