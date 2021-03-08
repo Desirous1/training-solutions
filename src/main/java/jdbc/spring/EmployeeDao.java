@@ -1,8 +1,6 @@
 package jdbc.spring;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
@@ -31,12 +29,12 @@ public class EmployeeDao {
 
     public List<String> listEmployesNames() {
         return jdbcTemplate.query("select emp_name from employees order by emp_name",
-                (rs, rowNumber) -> rs.getString("emp_name"));
+                (ps, rowNumber) -> ps.getString("emp_name"));
     }
 
     public String findEmployeeNameById(long id) {
         return jdbcTemplate.queryForObject("select emp_name from employees where id = ?",
-                new Object[]{id}, (rs, rowNum) -> rs.getString("emp_name"));
+                new Object[]{id}, (ps, rowNum) -> ps.getString("emp_name"));
     }
 
 }

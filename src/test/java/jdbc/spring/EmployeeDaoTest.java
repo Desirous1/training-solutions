@@ -32,9 +32,9 @@ public class EmployeeDaoTest {
     @Test
     public void testCreateThanList() {
         employeeDao.createEmployee("John Doe");
+        employeeDao.createEmployee("Jane Doe");
         List<String> employees = employeeDao.listEmployesNames();
-
-        assertEquals(Arrays.asList("John Doe"), employees);
+        assertEquals(Arrays.asList("Jane Doe", "John Doe"), employees);
     }
 
     @Test
